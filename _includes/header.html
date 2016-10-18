@@ -4,18 +4,20 @@
       <div class="nav-wrapper container">
         <a href="{{ " / " | relative_url }}" class="brand-logo">{{ site.title | escape }}</a>
         <ul class="right hide-on-med-and-down">
-          {% for my_page in site.pages %}
-            {% if my_page.title %}
-              <li><a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
-            {% endif %}
-          {% endfor %}
+          <li class="{% if page.url contains '/blog/' %}active{% endif %}">
+            <a href="/blog/">Blog</a>
+          </li>
+          <li class="{% if page.url == '/about/' %}active{% endif %}">
+            <a href="/about/">About</a>
+          </li>
         </ul>
         <ul id="slide-out" class="side-nav">
-          {% for my_page in site.pages %}
-            {% if my_page.title %}
-              <li><a href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
-            {% endif %}
-          {% endfor %}
+          <li class="{% if page.url contains '/blog/' %}active{% endif %}">
+            <a class="waves-effect waves-teal" href="/blog/">Blog</a>
+          </li>
+          <li class="{% if page.url == '/about/' %}active{% endif %}">
+            <a class="waves-effect waves-teal" href="/about/">About</a>
+          </li>
         </ul>
         <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
       </div>
