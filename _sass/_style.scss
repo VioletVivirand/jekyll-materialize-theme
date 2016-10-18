@@ -1,0 +1,31 @@
+// Change color of links
+$link-color: color("teal", "lighten-2");
+a {
+  color: $link-color;
+}
+
+// Stick Footer
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+// Set Margins for Code Snippets surrounded with "```"
+// If we choose to use PrismJs (http://prismjs.com), we don't need this part anymore
+// .highlight {
+//     margin: 1em 40px;
+// }
+.meta-info {
+  // font-style: italic;
+  font-size: 120%;
+  font-weight: 300;
+}
+
+hr {
+  opacity: 0.12;
+}

@@ -1,0 +1,58 @@
+<footer class="site-footer">
+
+  <div class="wrapper">
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col m12">
+            <h5 class="white-text">{{ site.title | escape }}</h5>
+          </div>
+
+          <div class="col l4 m6 s12">
+            <ul>
+              <li class="grey-text text-lighten-3">
+                {% if site.author %}
+                  {{ site.author | escape }}
+                {% else %}
+                  {{ site.title | escape }}
+                {% endif %}
+              </li>
+              {% if site.email %}
+                <li><a class="grey-text text-lighten-3" href="mailto:{{ site.email }}">{{ site.email }}</a>
+                </li>
+              {% endif %}
+            </ul>
+          </div>
+
+          <div class="col l3 m6 s12">
+            <ul>
+              {% if site.github_username %}
+              <li>
+                {% include icon-github.html username=site.github_username %}
+              </li>
+              {% endif %}
+
+              {% if site.twitter_username %}
+              <li>
+                {% include icon-twitter.html username=site.twitter_username %}
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+
+          <div class="col l5 m12 s12">
+            <p class="grey-text text-lighten-4">Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description. </p>
+          </div>
+          
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © <script type="text/javascript">document.write(new Date().getFullYear());</script> Copyright Text
+        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+</footer>

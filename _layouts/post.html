@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<article class="container" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <!-- Post Title -->
+    <h2 class="red-text text-lighten-2" itemprop="name headline">{{ page.title | escape }}</h2>
+
+    <!-- Post Time -->
+    <p>
+      <time class="grey-text text-darken-1" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time><span class="grey-text text-darken-1">{% if page.author %} • </span><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="grey-text text-darken-1" itemprop="name">{{ page.author }}</span></span>{% endif %}
+    </p>
+
+    <!-- Post Categories -->
+    {% if page.categories %}
+    <div class="col s12">
+    Categories: 
+        {% for category in page.categories %}
+          {{category}}
+        {% endfor %}
+    {% endif %}
+  </header>
+  <!-- Page Content -->
+  <div itemprop="articleBody">
+    {{ content | toc }}
+  </div>
+
+  <!-- Tags -->
+  {% if page.tags %}
+  Tags: 
+    {% for tag in page.tags %}
+    <div class="chip">{{tag}}</div>
+    {% endfor %}
+  {% endif %}
+
+  <!-- Disqus -->
+  {% if site.disqus.shortname %} {% include disqus_comments.html %} {% endif %}
+</article>
