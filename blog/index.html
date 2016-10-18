@@ -1,0 +1,56 @@
+---
+layout: default
+---
+
+<div class="container">
+  <!-- Post Section -->
+  <h2 class="red-text text-lighten-2">Blog</h1>
+  <hr>
+  <!-- Posts -->
+  <ul>
+    {% for post in paginator.posts %}
+      <li>
+        <h3>
+          <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
+        </h3>
+
+        <p class="grey-text text-lighten-1"><span class="meta-info">Posted on: {{ post.date | date: "%b %-d, %Y" }} {% if post.author %}by {{ post.author }}{% endif %}{% if post.author %} in {{ post.categories | join: ", " }}{% endif %}<span></p>
+
+        <p>{{ post.excerpt | remove: '<p>' | remove: '</p>' }}...<span ><a href="{{ post.url | prepend: site.baseurl }}"> (Read More)</a></span></p>
+        <hr>
+      </li>
+    {% endfor %}
+  </ul>
+  <!-- End Posts -->
+  <!-- End Post Section -->
+
+  <!-- Pagination -->
+  <div class="center-align">
+    <ul class="pagination">
+      {% if paginator.previous_page %}
+        <li class="waves-effect"><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"><i class="material-icons">chevron_left</i></a></li>
+      {% else %}
+        <li class="disabled"><a><i class="material-icons">chevron_left</i></a></li>
+      {% endif %}
+
+    
+      {% for pagenum in (1..paginator.total_pages) %}
+        {% if pagenum == paginator.page %}
+          <li class="active"><a>{{paginator.page}}</a></li>
+        {% elsif pagenum == 1 %}
+          <li class="waves-effect"><a href="{{ " / " | relative_url }}">{{ pagenum }}</a></li>
+        {% else %}
+          <li class="waves-effect"><a href="{{ site.paginate_prefix |  prepend: site.baseurl | append: pagenum | append: "/" }}">{{ pagenum }}</a></li>
+        {% endif %}
+      {% endfor %}
+
+      {% if paginator.next_page %}
+        <li class="waves-effect"><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"><i class="material-icons">chevron_right</i></a></li>
+      {% else %}
+        <li class="disabled"><a><i class="material-icons">chevron_right</i></a></li>
+      {% endif %}
+    </ul>
+  </div>
+<!-- End Pagination -->
+
+</div>

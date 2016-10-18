@@ -6,6 +6,7 @@
 * [Materialize Framework](http://prismjs.com)
 * Tag Archive function with [jekyll-tagging Plugin](https://github.com/pattex/jekyll-tagging)
 * Category Archive with some tweaks and custom layout and template
+* Paginator
 
 ## Recommended Tweek
 
@@ -13,8 +14,6 @@
 
 ## TODO
 
-* 參考原本的 Layout，把一些看起來不重要的 Tag (`<article>`, `<header>`, `<footer>`) 給補回去
-* TOC --> Scrollspys
 * [ScrollSpy](http://materializecss.com/scrollspy.html)
 * Category 顯示（參考 Recommended Tweek 裡面的 Permalink 解決方法）
 * Paginator
@@ -22,13 +21,6 @@
     * https://github.com/jekyll/jekyll-redirect-from，配合設定 [Permalinks](https://jekyllrb.com/docs/configuration/#default-configuration)
         * blog 的網址現在看起來太複雜了，這樣要 Redirect 的東西太多，應該參考 [Wordpress 建議的 permalink 格式來設定](https://www.elegantthemes.com/blog/tips-tricks/wordpress-permalinks)（`/%category%/%postname%/`）
         * 或是用 Archive Plugin [https://github.com/jekyll/jekyll-archives]()
-* 那 Tag 的 Archive Page 怎麼辦？好像無解？
-    * [https://github.com/pattex/jekyll-tagging]() EASY~ 補上 Layout 的設定就好
-* i18n
-* SideNav 裡面要顯示 Posts
-* 把 RSS 移到 Footer
-* Noto Sans
-* 把每一個 Feature 寫成一個 Post，當作說明，也順便測試 Pagination
 
 ## Future
 

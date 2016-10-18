@@ -35,10 +35,10 @@ excerpt_separator: <!--more-->
 # theme: minima
 
 # Outputting
-permalink: /:categories/:title/
+permalink: /blog/:categories/:title/
 paginate: 1
-paginate_path: "/blog/page:num/"
-paginate_prefix: "/blog/page"  # Helper for Paginator 
+paginate_path: "/blog/page/:num/"
+paginate_prefix: "/blog/page/"  # Helper for Paginator 
 
 gems:
   - jekyll-toc
