@@ -20,10 +20,21 @@ main {
 // .highlight {
 //     margin: 1em 40px;
 // }
+
+// My Helper
+.no-margin {
+    margin: 0 !important;
+}
+
+.shadow-unset {
+    box-shadow: unset !important;
+}
+
 .meta-info {
   // font-style: italic;
   font-size: 120%;
   font-weight: 300;
+  margin-bottom: 7px !important;
 }
 
 hr {

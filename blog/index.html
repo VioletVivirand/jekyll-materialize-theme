@@ -5,9 +5,35 @@ layout: default
 <div class="container">
   <!-- Post Section -->
   <h2 class="red-text text-lighten-2">Blog</h1>
-  <hr>
+  <!-- <hr> -->
   <!-- Posts -->
-  <ul>
+
+  <section class="blog-list">
+    {% for post in paginator.posts %}
+    <div class="col m12 no-margin">
+      <div class="card horizontal shadow-unset">
+        <div class="card-stacked">
+          <div class="card-content">
+            <a href="{{ post.url | prepend: site.baseurl }}"><span class="card-title">{{ post.title | escape }}</span></a>
+            <p class="grey-text text-lighten-1 meta-info">Posted on: {{ post.date | date: "%b %-d, %Y" }} {% if post.author %}by {{ post.author }}{% endif %}{% if post.author %} in {{ post.categories | join: ", " }}{% endif %}</p>
+            <p>{{ post.excerpt | remove: '<p>' | remove: '</p>' }}...</p>
+          </div>
+          <div class="card-action">
+            <a href="{{ post.url | prepend: site.baseurl }}">Read More</a>
+          </div>
+        </div>
+        {% if post.thumbnail %}
+          <div class="card-image valign-wrapper">
+            <img src="{{post.thumbnail}}" class="valign">
+          </div>
+        {% endif %}
+      </div>
+    </div>
+    <hr>
+    {% endfor %}
+  </section>
+
+  <!-- <ul>
     {% for post in paginator.posts %}
       <li>
         <h3>
@@ -20,7 +46,7 @@ layout: default
         <hr>
       </li>
     {% endfor %}
-  </ul>
+  </ul> -->
   <!-- End Posts -->
   <!-- End Post Section -->
 
