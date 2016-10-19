@@ -1,7 +1,11 @@
+// Initialize SideNav
 (function($){
   $(function(){
 
     $('.button-collapse').sideNav();
 
-  }); // end of document ready
-})(jQuery); // end of jQuery name space
+  });
+})(jQuery);
+
+// Add "responsive-img" Class to images in <article>
+$("article img").addClass("responsive-img")
